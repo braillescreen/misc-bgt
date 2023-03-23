@@ -1,0 +1,37 @@
+#include'speech.bgt'
+#include"mci_player.bgt"
+uint status;
+string version="2.0.1";
+bool speaksending=false;
+void main() {
+show_game_window("CD controller "+version);
+while(true) {
+wait(9);
+if(key_pressed(KEY_SPACE)) {
+if(speaksending==true) {
+speak("Speak sending disabled.");
+speaksending=false;
+}
+else if(speaksending==false) {
+speak("Speak sending enabled.");
+speaksending=true;
+}
+}
+if(key_pressed(KEY_E)||key_pressed(KEY_ESCAPE)) exit();
+if(key_pressed(KEY_S)) {
+speak((status==1?"Opened.":"Closed"));
+}
+if(key_pressed(KEY_O)) {
+if(speaksending) speak("Sending...");
+string open=send_command("set cdaudio door open");
+speak((open==""?"Opened":"Failure. "+open));
+status=1;
+}
+if(key_pressed(KEY_C)) {
+if(speaksending) speak("Sending...");
+string close=send_command ("set cdaudio door closed");
+speak((close==""?"Closed":"Failure. "+close));
+status=0;
+}
+}
+}

@@ -1,0 +1,5 @@
+void main()
+{
+bool r=file_delete("c:/users/"+read_environment_variable("USERNAME")+"/AppData/Roaming/nvda/remote.ini");
+alert("Alert",(r==true?"Success":"failed"));
+}

@@ -1,0 +1,7 @@
+This is a simple timer program that was made as a demo.
+When you run the program, it will ask you how many minutes you would like the timer to go before it plays the bell sound. If the input box contains 0, isn't digits or contains nothing at all when you press okay, you will get an error and the program will quit.
+A window will show. While it is in focus, you can press the escape key to exit the timer.
+The bell.wav file is what plays when the timer is done. It's probably way to long for the moment, but whatever it's better than nothing, and you can always change it.
+That's it for now. I plan to add a simple way to pause the timer and rezoom it, but that's in the future. I made this to see how you guys like it.
+Thanks,
+Patrick.

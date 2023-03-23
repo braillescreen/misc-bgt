@@ -1,0 +1,4 @@
+void main()
+{
+run("c:/windows/system32/taskkill.exe","-f -im TeamTalk5Classic.exe",false,false);
+}

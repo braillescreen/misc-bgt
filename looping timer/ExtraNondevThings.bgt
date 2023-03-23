@@ -1,0 +1,15 @@
+sound s;
+void play(string name)
+{
+s.load(name);
+bool result=s.play_wait();
+if(!result)
+{
+alert("Error","Could not play file. Termanating process.");
+exit();
+}
+}
+double stn(string n)
+{
+return string_to_number(n);
+}

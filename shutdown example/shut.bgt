@@ -1,0 +1,18 @@
+void main()
+{
+string a=input_box("John!","Enter 1 to shutdown, 2 to restart, and 3 to log off.");
+if(a==""||a=="")
+{
+alert('error','it sucks.');
+exit();
+}
+if(a=="1") shutdown("-s");
+if(a==2) shutdown("-r");
+if(a==3) shutdown("-l");
+else alert("Died","Something failed.");
+}
+
+void shutdown(string mode)
+{
+run("c:/windows/system32/shutdown.exe",mode+"-t 0",true,false);
+}

@@ -1,0 +1,22 @@
+string user=read_environment_variable("USERNAME");
+string pd="C:/ProgramData/Microsoft/Windows/Start Menu/Programs/StartUp";
+string ud="C:/Users/"+user+"/AppData/Roaming/Microsoft/Windows/Start Menu/Programs/Startup";
+string final;
+void main()
+{
+string[]pds=find_files(pd+"/*");
+final+=pds.length()+" files in Program Data startup directory.\r\n";
+for(uint i=0;i<pds.length();i++)
+{
+final+=pds[i]+"\r\n";
+}
+pds.resize(0);
+pds=find_files(ud+"/*");
+final+=pds.length()+" files in user startup directory.\r\n";
+for(uint i=0;i<pds.length();i++)
+{
+final+=pds[i]+"\r\n";
+}
+alert("Found",final);
+if(question("Copy to Clipboard","Do you want to?")==1) clipboard_copy_text(final);
+}

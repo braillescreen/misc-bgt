@@ -1,0 +1,33 @@
+uint8 active_sr()
+{
+uint8 ret=0;
+for(uint8 i=0; i<=4; i++)
+{
+if(screen_reader_is_running(i))
+{
+ret=i;
+break;
+}
+}
+return ret;
+}
+bool speak(string text, bool interrupt=true)
+{
+tts_voice tts_v;
+uint8 mode=active_sr();
+if(mode==0)
+{
+if(interrupt)
+return tts_v.speak_interrupt(text);
+else
+return tts_v.speak(text);
+}
+if(mode!=0)
+{
+if(interrupt)
+return screen_reader_speak_interrupt(mode,text);
+else
+return screen_reader_speak(mode,text);
+}
+return false;
+}

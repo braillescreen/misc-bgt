@@ -1,0 +1,21 @@
+string version="0.1";
+timer t;
+#include"ExtraNondevThings.bgt"
+void main()
+{
+string blah=input_box("Timer","Enter how long you want the timer to go for, in minutes.","2");
+if(!string_is_digits(blah)||blah==""||blah=="0")
+{
+alert("Error","You have either entered nothing, entered the number 0 or the result was not digits. Now exiting.");
+exit();
+}
+while(show_game_window("Timer version "+version)) {
+if(key_pressed(KEY_SPACE)) play("bell.wav");
+if(key_pressed(KEY_ESCAPE)) exit();
+if(t.elapsed>=60000*stn(blah))
+{
+play("bell.wav");
+t.restart();
+}
+}
+}

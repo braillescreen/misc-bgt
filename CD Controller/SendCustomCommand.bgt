@@ -1,0 +1,7 @@
+#include"mci_player.bgt"
+void main()
+{
+string d=input_box("Send command to MCI","What do you want to send?");
+string f=send_command(d);
+alert("Return",f);
+}

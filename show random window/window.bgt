@@ -1,0 +1,9 @@
+string w="The Window";
+void main()
+{
+show_game_window(w);
+while(true)
+{
+if(key_pressed(KEY_ESCAPE)) exit();
+} //while
+} //main

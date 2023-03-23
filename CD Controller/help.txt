@@ -1,0 +1,15 @@
+CD Controller
+Use:
+Run it, look for window.
+Keys:
+O: Open CD drive.
+C: Close CD drive.
+E or escape: exit.
+S: Status.
+Space: Toggle if the word "Sending..." is spoken when sending a command. Default is enabled.
+
+
+Please note that if the program gets stuck and won't exit, wait about 10 seconds, and whatever command you pressed will exicute after the other one is finished. This is a bit weird.
+Please also note that if you get an error while closing the CD drive, you may have to close the drive yourself.
+
+Have fun!

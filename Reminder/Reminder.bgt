@@ -1,0 +1,16 @@
+tts_voice tts;
+void speak(string x, bool wait=false)
+{
+if(!wait) tts.speak(x);
+if(wait) tts.speak_wait(x);
+}
+void main()
+{
+string r=input_box("Reminder","Enter what you'd like to be reminded about.");
+string t=input_box("Time","When would you like to be reminded of this?");
+if(r=="" or t=="") exit();
+int i=string_to_number(t);
+wait(i);
+show_game_window("Reminder! "+r);
+speak("Reminder: "+r,true);
+}

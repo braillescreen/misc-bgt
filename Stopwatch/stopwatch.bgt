@@ -1,0 +1,25 @@
+#include"functions.bgt"
+timer t;
+bool active=false;
+void main()
+{
+alert("Hi","Welcome to stopwatch. Press space to start or stop the stopwatch.");
+show_game_window("Stopwatch, created by Patrick Wilson");
+while(true)
+{
+if(active)
+{
+sspeak("Stopped");
+t.pause();
+active=false;
+}
+else if(!active)
+{
+speak("Started.");
+t.restart();
+active=true;
+}
+}
+if(key_pressed(KEY_T)) speak(ms_to_readable_time(t.elapsed());
+if(key_pressed(KEY_ESCAPE)) exit();
+}
